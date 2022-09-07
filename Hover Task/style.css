@@ -1,0 +1,54 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.box{
+    position: relative;
+    height: 300px;
+    width: 400px;
+    background-color: white;
+}
+.box span{
+    position: absolute;
+    transition: .5s;
+    inset: 0;
+    background: url("img/man.jpg");
+    background-size: cover;
+}
+
+.box span:nth-child(1){
+    clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
+    /* background-color: red; */
+}
+.box span:nth-child(2){
+    clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+    /* background-color: green; */
+}
+.box span:nth-child(3){
+    clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
+    /* background-color: blue; */
+}
+.box span:nth-child(4){
+    clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+    /* background-color: yellow; */
+}
+
+.box:hover span:nth-child(1){
+    transform: translate(-40px,-60px) rotate(-15deg);
+    transition-delay: 0s;
+}
+.box:hover span:nth-child(2){
+    transform: translate(40px,-100px) rotate(25deg);
+    transition-delay: .25s;
+}
+.box:hover span:nth-child(3){
+    transform: translate(-40px,80px) rotate(15deg);
+    transition-delay: .5s;
+}
+.box:hover span:nth-child(4){
+    transform: translate(40px,80px) rotate(-15deg);
+    transition-delay: .75s;
+}
